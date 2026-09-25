@@ -10,6 +10,7 @@ import {
   FileText,
   Copy,
   Check,
+  Briefcase,
   Cpu,
   Layers,
   Sparkles,
@@ -44,10 +45,12 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Main Bio / Introduction */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Status indicator */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/40 border border-emerald-800/50 text-emerald-400 text-xs font-mono">
+            {/* Current workplace banner */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/40 border border-emerald-700/60 text-emerald-300 text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>{cvData.personal.status}</span>
+              <span className="font-semibold text-white">ETE Technology</span>
+              <span className="text-emerald-500">·</span>
+              <span>C++ Software Engineer (Since Feb 19, 2024)</span>
             </div>
 
             {/* Title & Name */}
@@ -64,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({
                   {cvData.personal.location}
                 </span>
                 <span aria-hidden="true" className="text-neutral-700">·</span>
-                <span className="text-neutral-300">B.Sc. Computer Engineering (İYTE &apos;23)</span>
+                <span className="text-neutral-300">İzmir Institute of Technology (2018 – 2023)</span>
               </div>
             </div>
 
@@ -130,20 +133,20 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-3">
-              <button
-                onClick={onExploreProjects}
+              <a
+                href="#experience"
                 className="px-5 py-2.5 bg-emerald-400 hover:bg-emerald-300 text-black font-mono text-xs uppercase tracking-wider font-semibold transition-colors flex items-center gap-2 cursor-pointer"
               >
-                <span>View Engineering Work</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+                <Briefcase className="w-3.5 h-3.5" />
+                <span>Experience at ETE Tech</span>
+              </a>
 
               <button
                 onClick={onOpenCvModal}
                 className="px-5 py-2.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-200 font-mono text-xs uppercase tracking-wider transition-colors flex items-center gap-2 cursor-pointer"
               >
                 <FileText className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Print / Read Full CV</span>
+                <span>View Full CV Sheet</span>
               </button>
 
               <button
@@ -164,61 +167,61 @@ export const Hero: React.FC<HeroProps> = ({
                   <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                   <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  <span className="text-[11px] text-neutral-400 ml-2">furkan@iyte-eng:~</span>
+                  <span className="text-[11px] text-neutral-400 ml-2">furkan@ete-tech:~</span>
                 </div>
-                <span className="text-[10px] text-neutral-500">profile.json</span>
+                <span className="text-[10px] text-neutral-500">engineer_spec.env</span>
               </div>
 
               {/* Terminal Body */}
               <div className="p-5 space-y-4 text-neutral-300">
                 <div>
-                  <span className="text-emerald-400 font-semibold">$</span> cat sys_overview.env
+                  <span className="text-emerald-400 font-semibold">$</span> cat current_position.json
                 </div>
 
-                <div className="space-y-2 bg-[#090a0f] p-3 border border-neutral-800/80 text-[11px] text-neutral-300">
+                <div className="space-y-1.5 bg-[#090a0f] p-3.5 border border-neutral-800/80 text-[11px] text-neutral-300">
                   <div>
-                    <span className="text-neutral-500">ENGINEER=</span>&quot;Furkan Yavuz&quot;
+                    <span className="text-neutral-500">CURRENT_COMPANY=</span>&quot;ETE Technology&quot;
                   </div>
                   <div>
-                    <span className="text-neutral-500">SPECIALIZATION=</span>[&quot;Natural Language Processing&quot;, &quot;Backend Systems&quot;, &quot;Machine Learning&quot;]
+                    <span className="text-neutral-500">ROLE=</span>&quot;C++ Software Engineer&quot;
                   </div>
                   <div>
-                    <span className="text-neutral-500">PRIMARY_LANGUAGE=</span>&quot;Python (FastAPI, TensorFlow, scikit-learn, Flask)&quot;
+                    <span className="text-neutral-500">START_DATE=</span>&quot;2024-02-19 (02/2024 – Present)&quot;
                   </div>
                   <div>
-                    <span className="text-neutral-500">SYSTEMS=</span>[&quot;Java&quot;, &quot;C / C++&quot;, &quot;SQL&quot;, &quot;Linux/Ubuntu&quot;]
+                    <span className="text-neutral-500">CORE_PRODUCT=</span>&quot;nginr (Modern C++)&quot;
                   </div>
                   <div>
-                    <span className="text-neutral-500">ORCHESTRATION=</span>[&quot;Haystack&quot;, &quot;Hugging Face&quot;, &quot;Docker&quot;, &quot;MongoDB&quot;]
+                    <span className="text-neutral-500">STACK=</span>[&quot;C++&quot;, &quot;Distributed Systems&quot;, &quot;Networking&quot;, &quot;Microservices&quot;, &quot;Big Data&quot;]
                   </div>
                   <div>
-                    <span className="text-neutral-500">DEGREE=</span>&quot;BS Computer Engineering @ İzmir Institute of Technology (2019-2023)&quot;
+                    <span className="text-neutral-500">ALMA_MATER=</span>&quot;İzmir Institute of Technology (B.S. Comp Eng 2018-2023)&quot;
                   </div>
                 </div>
 
                 {/* Key Metric Highlights */}
                 <div className="grid grid-cols-2 gap-3 pt-1">
                   <div className="p-3 bg-neutral-900/60 border border-neutral-800">
-                    <div className="text-lg font-bold text-white font-mono">2019-2023</div>
-                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">İYTE Comp. Eng</div>
+                    <div className="text-base font-bold text-emerald-400 font-mono">02/2024 – Present</div>
+                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">ETE Technology</div>
                   </div>
                   <div className="p-3 bg-neutral-900/60 border border-neutral-800">
-                    <div className="text-lg font-bold text-emerald-400 font-mono">NLP & ML</div>
-                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">Core Focus</div>
+                    <div className="text-base font-bold text-white font-mono">nginr Core</div>
+                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">Modern C++ Product</div>
                   </div>
                   <div className="p-3 bg-neutral-900/60 border border-neutral-800">
-                    <div className="text-lg font-bold text-white font-mono">Infuseloop</div>
-                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">Software Eng Intern</div>
+                    <div className="text-base font-bold text-white font-mono">İYTE Comp Eng</div>
+                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">2018 – 2023 B.S.</div>
                   </div>
                   <div className="p-3 bg-neutral-900/60 border border-neutral-800">
-                    <div className="text-lg font-bold text-emerald-400 font-mono">Haystack + TF-IDF</div>
-                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">Pipelines Built</div>
+                    <div className="text-base font-bold text-emerald-400 font-mono">C++, Python, Go</div>
+                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5">Languages</div>
                   </div>
                 </div>
 
                 <div className="pt-2 text-[11px] text-neutral-500 flex items-center justify-between border-t border-neutral-800/80">
-                  <span>STATUS: READY FOR INTERVIEWS</span>
-                  <span className="text-emerald-400">200 OK</span>
+                  <span>LOCATION: İZMİR, TÜRKİYE</span>
+                  <span className="text-emerald-400">ACTIVE ON nginr</span>
                 </div>
               </div>
             </div>

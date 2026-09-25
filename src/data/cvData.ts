@@ -2,22 +2,25 @@ export interface ExperienceItem {
   company: string;
   role: string;
   period: string;
+  startDate?: string;
+  isCurrent?: boolean;
   location: string;
   description: string;
   bullets: string[];
   technologies: string[];
-  languages: string[];
+  languages?: string[];
 }
 
 export interface ProjectItem {
   id: string;
   title: string;
   type: string;
-  period: string;
+  institution?: string;
+  period?: string;
   summary: string;
   highlights: string[];
   technologies: string[];
-  programmingLanguages: string[];
+  programmingLanguages?: string[];
   links?: {
     github?: string;
     demo?: string;
@@ -48,56 +51,94 @@ export const cvData = {
   personal: {
     name: 'Furkan Yavuz',
     title: 'Software Engineer',
-    headline: 'Specializing in NLP, Machine Learning & Backend Systems',
+    currentRole: 'C++ Software Engineer @ ETE Technology',
+    headline: 'High-Performance C++ Backend Systems, Distributed Architectures & Networking Protocols',
     location: 'İzmir, Türkiye',
-    phone: '+90 545 864 7645',
+    phone: '+90 545 864 76 45',
     phoneRaw: '+905458647645',
     email: 'furkanyavuz0926@gmail.com',
     github: 'https://github.com/FurkanYavuz09',
     githubUsername: 'FurkanYavuz09',
-    linkedin: 'https://linkedin.com/in/furkan-yavuz',
-    linkedinUsername: 'furkan-yavuz',
-    status: 'Open to software engineering & machine learning roles',
+    linkedin: 'https://linkedin.com/in/furkan-yavuz-',
+    linkedinUsername: 'furkan-yavuz-',
+    status: 'C++ Software Engineer at ETE Technology (Since Feb 19, 2024)',
     summary:
-      'I am a New Graduate Software Engineer who is interested in Natural Language Processing, Backend Development and Machine Learning. I am seeking to utilize a broad educational background with excellent analytical, technical and programming skills to thrive as an entry level Software Engineer.',
+      'Software Engineer with a strong background in Computer Engineering from İzmir Institute of Technology. Experienced in developing high-performance C++ backend systems, distributed architectures, networking protocols, and scalable microservices. Passionate about writing modern, robust, and clean low-level code while optimizing large-scale data workflows and system throughput.',
   },
 
   skills: {
-    languages: [
-      { name: 'Python', details: 'TensorFlow, scikit-learn, Flask, FastAPI, NumPy, Pandas, NLTK' },
-      { name: 'Java', details: 'Core Java, OOP, Data Structures' },
-      { name: 'C / C++', details: 'Systems Programming, Memory Management, Algorithms' },
-      { name: 'HTML / CSS / JavaScript', details: 'Frontend Fundamentals, Responsive Web, ES6+' },
-      { name: 'SQL', details: 'Relational Database Design, Complex Queries, Indexing' },
+    programmingLanguages: [
+      { name: 'C++', details: 'Modern C++ (17/20), Core Architecture, Low-Latency Networking, Memory Efficiency' },
+      { name: 'C', details: 'Low-Level Systems, Sockets, POSIX Threads, Memory Management' },
+      { name: 'Python', details: 'FastAPI, Haystack, NumPy, Pandas, TensorFlow, Keras, scikit-learn, NLTK, Selenium' },
+      { name: 'Java', details: 'OOP, Concurrency, Enterprise Foundations' },
+      { name: 'Go', details: 'Concurrent Services, Microservices, Network Tools' },
+      { name: 'SQL', details: 'Relational Schemas, Performance Indexing, MySQL' },
+      { name: 'JavaScript & HTML', details: 'Web & API Consumers, Node.js, Frontend Integration' },
     ],
-    technologies: [
-      { category: 'AI & NLP Frameworks', items: ['Haystack', 'Hugging Face', 'TensorFlow', 'scikit-learn', 'NLTK'] },
-      { category: 'Backend & APIs', items: ['FastAPI', 'Flask', 'Node.js', 'Postman', 'RESTful Architectures'] },
-      { category: 'Databases & Storage', items: ['MongoDB', 'MySQL', 'JSON pipelines', 'Elasticsearch'] },
-      { category: 'Systems & DevOps', items: ['Linux (Ubuntu / Mint)', 'Git', 'Docker', 'GitLab', 'Google Colab'] },
+    coreDomains: [
+      'Distributed Systems',
+      'Computer Networking',
+      'Microservices',
+      'Big Data',
+      'Concurrency',
+      'Low-Latency Communication Protocols',
+      'Object-Oriented Programming (OOP)',
+      'Data Ingestion Pipelines',
+    ],
+    toolsAndTechnologies: [
+      'Linux / Ubuntu',
+      'Docker',
+      'Git',
+      'MongoDB',
+      'MySQL',
+      'Elasticsearch',
+      'Postman',
+      'Google Cloud',
+      'Node.js',
+      'Hugging Face',
+      'Haystack',
+      'GitLab',
+      'Google Colab',
     ],
     spokenLanguages: [
-      { language: 'English', proficiency: 'Advanced', level: 'Professional Working' },
-      { language: 'Turkish', proficiency: 'Native', level: 'Native Language' },
-      { language: 'Mandarin Chinese', proficiency: 'Beginner', level: 'Foundational' },
+      { language: 'English', proficiency: 'Advanced / Professional Working' },
+      { language: 'Turkish', proficiency: 'Native' },
     ],
   },
 
   experience: [
     {
-      company: 'Infuseloop',
-      role: 'Software Engineer Intern',
-      period: '01/2023 – 02/2023',
+      company: 'ETE Technology',
+      role: 'C++ Software Engineer',
+      period: '02/2024 – Present',
+      startDate: 'February 19, 2024',
+      isCurrent: true,
       location: 'İzmir, Türkiye',
       description:
-        'Worked on a question answering system using language models in a start-up company focused on accelerating knowledge discovery from documents with AI.',
+        'Actively building and optimizing high-performance backend systems and low-latency networking modules for the nginr product using modern C++ in distributed environments.',
       bullets: [
-        'Built an end-to-end question answering pipeline for document knowledge retrieval using the open-source Haystack LLM framework.',
-        'Created a robust data collection and pre-processing pipeline to parse, normalize, and ingest complex document structures.',
-        'Fine-tuned and evaluated language models with Hugging Face transformers to ensure reliable, high-precision context retrieval.',
-        'Containerized services using Docker and built high-performance endpoints with FastAPI, testing and documenting APIs via Postman.',
+        'Actively contributing to the core architecture and development of the nginr product using modern C++.',
+        'Designing and optimizing high-performance, low-latency networking modules and communication protocols.',
+        'Building robust, fault-tolerant microservices and backend services operating in distributed system environments.',
+        'Developing big data ingestion and processing pipelines focused on high concurrency, throughput, and memory efficiency.',
       ],
-      technologies: ['Hugging Face', 'Elasticsearch', 'Postman', 'Docker', 'Haystack'],
+      technologies: ['C++', 'Distributed Systems', 'Networking', 'Microservices', 'Big Data', 'Linux/Ubuntu', 'Git'],
+      languages: ['Modern C++ (17/20)'],
+    },
+    {
+      company: "Yenilik Atölyesi / Tech'n Roll",
+      role: 'Software Engineer Intern',
+      period: '01/2023 – 02/2023',
+      isCurrent: false,
+      location: 'İzmir, Türkiye',
+      description:
+        'Engineered an NLP intelligence pipeline using Haystack and benchmarked LLM inferences, serving models through scalable REST endpoints.',
+      bullets: [
+        'Implemented an NLP pipeline using the Haystack framework and evaluated performance across various Large Language Models (LLMs).',
+        'Architected and deployed a RESTful API using FastAPI to serve model inferences reliably.',
+      ],
+      technologies: ['Python (FastAPI, Haystack)', 'Hugging Face', 'Elasticsearch', 'Docker', 'Postman'],
       languages: ['Python (FastAPI, Haystack)'],
     },
   ] as ExperienceItem[],
@@ -105,55 +146,43 @@ export const cvData = {
   projects: [
     {
       id: 'thesis-project',
-      title: 'Machine Learning-based Analysis of Scientific and Research Connections',
-      type: 'B.Sc. Thesis Project',
+      title: 'ML-based Analysis of Scientific & Research Connections',
+      type: 'Thesis Project',
+      institution: 'İzmir Institute of Technology',
       period: '2022 – 2023',
       summary:
-        'Engineered an intelligent NLP analytics engine that processes vast scientific publications, classifies them according to UN Sustainable Development Goals (SDGs), and delivers article similarity recommendations.',
+        'Engineered an intelligent scholarly analytics platform classifying scientific articles under UN Sustainable Development Goals and calculating multidimensional similarity recommendation scores.',
       highlights: [
-        'Developed a keyword-based classification algorithm classifying articles by Sustainable Development Goals (SDGs) using TF-IDF feature weighting.',
-        'Architected a user-based Article Recommendation system calculating multidimensional similarity scores between scholarly works.',
-        'Processed and cleaned extensive JSON datasets containing academic literature, specifically extracting articles authored by Turkish researchers using automated Python scripts.',
-        'Stored and queried unstructured document metadata at scale using MongoDB, with version control managed through GitLab.',
+        'Engineered a TF-IDF keyword classification algorithm to classify academic articles under UN Sustainable Development Goals.',
+        'Constructed a collaborative-filtering article recommendation engine for research discovery.',
+        'Parsed and filtered large-scale JSON publication datasets, extracting academic contributions by Turkish authors.',
       ],
-      technologies: ['JSON', 'MongoDB', 'GitLab', 'Google Colab', 'Haystack'],
-      programmingLanguages: ['Python (NumPy, Pandas, TensorFlow, scikit-learn, NLTK)'],
+      technologies: [
+        'Python (NumPy, Pandas, TensorFlow, Keras, scikit-learn, NLTK)',
+        'MongoDB',
+        'GitLab',
+      ],
       links: {
         github: 'https://github.com/FurkanYavuz09',
       },
     },
     {
-      id: 'document-qa-pipeline',
-      title: 'Knowledge Discovery & Semantic QA Engine',
-      type: 'Production NLP System',
+      id: 'weather-forecasting',
+      title: 'Weather Forecasting Using Data Mining',
+      type: 'Personal / Academic Project',
       period: '2023',
       summary:
-        'High-throughput semantic search and extractive question answering backend that indexes unstructured corporate documents and serves real-time answers with source citations.',
+        'Automated meteorological data harvesting system and predictive machine learning models delivering multi-horizon weather forecasts.',
       highlights: [
-        'Integrated Elasticsearch as a dense-sparse document store for sub-second text retrieval across indexed PDFs and text dumps.',
-        'Leveraged Hugging Face reader models with Haystack retrieval pipelines, reducing question resolution latency.',
-        'Exposed async REST endpoints with FastAPI and verified contract integrity with Postman suites and Dockerized environments.',
+        'Built an automated Python web scraper using Selenium to aggregate historical meteorological data.',
+        'Trained ML regression and time-series models for 3-day, 7-day, and 14-day weather forecasting.',
+        'Evaluated prediction metrics against baseline atmospheric datasets with feature engineering in Google Colab.',
       ],
-      technologies: ['Docker', 'FastAPI', 'Elasticsearch', 'Hugging Face', 'Haystack'],
-      programmingLanguages: ['Python', 'Bash', 'Dockerfiles'],
-      links: {
-        github: 'https://github.com/FurkanYavuz09',
-      },
-    },
-    {
-      id: 'parallel-network-systems',
-      title: 'Concurrent Network Server & Systems Suite',
-      type: 'Systems & Networks',
-      period: '2022',
-      summary:
-        'Implemented socket-level parallel network communication patterns and multi-threaded data processors exploring synchronization, mutexes, and low-latency packet handling.',
-      highlights: [
-        'Constructed custom multi-client socket servers in C and C++ utilizing POSIX threads and epoll for non-blocking I/O.',
-        'Benchmarked parallel programming patterns (Master-Worker, Pipeline) against heavy matrix workloads.',
-        'Analyzed network performance bottlenecks and packet routing behavior across simulated topologies.',
+      technologies: [
+        'Python (NumPy, Pandas, scikit-learn, Selenium)',
+        'GitHub',
+        'Google Colab',
       ],
-      technologies: ['Linux / Ubuntu', 'POSIX Threads', 'Sockets', 'Git'],
-      programmingLanguages: ['C', 'C++', 'Java', 'Python'],
       links: {
         github: 'https://github.com/FurkanYavuz09',
       },
@@ -162,83 +191,66 @@ export const cvData = {
 
   education: [
     {
-      institution: 'İzmir Institute Of Technology (İYTE)',
-      degree: 'Bachelor of Science - BS, Computer Engineering',
-      period: '2019 – 2023',
+      institution: 'İzmir Institute of Technology',
+      degree: 'B.S. in Computer Engineering',
+      period: '2018 – 2023',
       details:
-        'One of Türkiye’s premier research-oriented technical institutes. Rigorous curriculum covering core computer science, software architecture, mathematics, and high-performance engineering.',
-      electiveCourses: [
-        'Network Design And Management',
-        'Network Programming',
-        'Artificial Intelligence',
-        'Introduction To Machine Learning',
-        'Building Software Systems',
-        'Parallel Programming Patterns',
-      ],
+        'Rigorous engineering foundation in distributed systems, low-level computer networking, concurrency patterns, and machine learning.',
     },
     {
       institution: 'OSF Academy',
-      degree: 'Salesforce Core Developer Certification Program',
+      degree: 'Salesforce Core Developer (6-Week Intensive Program)',
       period: '10/2023 – 11/2023',
-      details: 'Intensive 6-week software development program covering enterprise cloud architecture, APEX, and integrations.',
-    },
-    {
-      institution: 'İzmir Institute Of Technology',
-      degree: 'English Language Preparatory Program',
-      period: '2018 – 2019',
-      details: 'Full-time advanced academic English immersion preparing for 100% English-medium engineering education.',
+      details: 'Enterprise backend cloud architectures, APEX engineering, and scalable integrations.',
     },
   ] as EducationItem[],
 
   blogPosts: [
     {
-      id: 'nlp-pipeline-haystack',
-      title: 'Building Production Question Answering Pipelines with Haystack & FastAPI',
-      slug: 'nlp-pipeline-haystack-fastapi',
-      date: 'Feb 15, 2024',
+      id: 'cpp-networking-low-latency',
+      title: 'Architecting Low-Latency Networking Modules in Modern C++',
+      slug: 'cpp-networking-low-latency',
+      date: 'Aug 14, 2024',
       readTime: '6 min read',
-      category: 'NLP & AI',
-      tags: ['NLP', 'Haystack', 'FastAPI', 'Elasticsearch'],
+      category: 'C++ & Networking',
+      tags: ['C++', 'Networking', 'Concurrency', 'Distributed Systems'],
       summary:
-        'A practical breakdown of designing document retrieval architectures, combining dense embeddings with sparse lexical indexing, and serving low-latency LLM inference in production.',
+        'Key architectural patterns for designing high-throughput communication protocols, zero-copy buffers, and asynchronous event loops in modern C++.',
       content: [
-        'When working with real-world enterprise documents, simple keyword matching quickly hits a ceiling. Documents contain domain-specific synonyms, tabular data, and complex formatting that standard SQL LIKE queries cannot resolve.',
-        'During my internship at Infuseloop, our team focused on closing this gap by engineering a modular retrieval-augmented generation (RAG) and extractive QA pipeline using the Haystack framework.',
-        'The architecture consisted of three decoupled layers: an ingestion & normalization worker, a dual-indexer backed by Elasticsearch, and a FastAPI inference engine serving answer candidates alongside confidence calibration scores.',
-        'Key takeaway: Document pre-chunking with 20% sliding window overlap increased question recall by over 32% compared to static arbitrary paragraph splits.',
+        'When operating at the core of high-throughput backend products like nginr at ETE Technology, microsecond latencies matter. Moving from standard blocking I/O to event-driven architectures requires rigorous control over memory layout and system calls.',
+        'In modern C++ (C++17/20), we leverage cache-friendly data structures, ring buffers, and custom memory allocators to prevent heap fragmentation during massive burst ingestion.',
+        'Designing modular networking abstractions means decoupling transport layer logic from protocol parsing, allowing the engine to adapt dynamically to evolving network topologies without sacrificing raw throughput.',
       ],
     },
     {
-      id: 'sdg-classification-tfidf',
-      title: 'Classifying Scientific Research via TF-IDF and Recommendation Scoring',
-      slug: 'classifying-scientific-research-tfidf',
-      date: 'Dec 10, 2023',
+      id: 'big-data-concurrency-pipelines',
+      title: 'High-Concurrency Big Data Ingestion: Minimizing Lock Contention',
+      slug: 'high-concurrency-big-data-ingestion',
+      date: 'May 02, 2024',
       readTime: '5 min read',
-      category: 'Machine Learning',
-      tags: ['Machine Learning', 'Python', 'NLTK', 'MongoDB'],
+      category: 'Distributed Systems',
+      tags: ['Distributed Systems', 'Big Data', 'Concurrency', 'C++'],
       summary:
-        'Insights from my graduation thesis at IYTE on processing vast academic JSON corpora to map papers against UN Sustainable Development Goals using statistical NLP.',
+        'Designing lock-free queues and producer-consumer pipelines that maximize CPU core saturation while maintaining strict memory bounds.',
       content: [
-        'Classifying research papers according to global impact metrics requires handling unstructured academic abstracts characterized by high lexical density and sparse annotations.',
-        'In my thesis project, I designed a multi-stage classification pipeline using Python, scikit-learn, and NLTK. We extracted hundreds of articles written by Turkish researchers, sanitized the raw JSON payload, and extracted normalized lemma tokens.',
-        'By computing TF-IDF matrices weighted against curated UN SDG target lexicons, we achieved highly interpretable topic boundaries without requiring the computational overhead of fine-tuning multi-billion parameter models.',
-        'Furthermore, implementing cosine similarity matrices over high-dimensional vector spaces allowed us to generate bidirectional article recommendation graphs with minimal latency.',
+        'Big data ingestion pipelines frequently suffer not from raw CPU limitations, but from synchronization bottlenecks. When multiple threads contend for mutexes across ingestion queues, throughput collapses.',
+        'By utilizing single-producer single-consumer (SPSC) lock-free ring buffers and batching memory operations, we achieve predictable latency curves even under intense network backpressure.',
+        'Monitoring OS context switching and cache invalidations using Linux profiling tools (perf, valgrind) provides the empirical grounding necessary to fine-tune distributed microservices.',
       ],
     },
     {
-      id: 'concurrency-parallel-patterns',
-      title: 'Parallel Programming Patterns: Moving Beyond Single-Threaded Thinking',
-      slug: 'parallel-programming-patterns-concurrency',
-      date: 'Oct 04, 2023',
-      readTime: '4 min read',
-      category: 'Systems',
-      tags: ['C / C++', 'Concurrency', 'POSIX', 'Systems'],
+      id: 'nlp-pipeline-haystack',
+      title: 'Deploying Scalable NLP Inference Microservices with Haystack & FastAPI',
+      slug: 'nlp-pipeline-haystack-fastapi',
+      date: 'Feb 10, 2024',
+      readTime: '5 min read',
+      category: 'NLP & ML',
+      tags: ['Python', 'FastAPI', 'Haystack', 'Docker'],
       summary:
-        'Reflections on multi-threaded architecture, race condition mitigation, and parallel paradigms studied during my Computer Engineering electives at IYTE.',
+        'Engineering reproducible document retrieval and question answering pipelines using open-source LLM frameworks and containerized microservices.',
       content: [
-        'Writing clean code in modern languages like Python often shields developers from the raw mechanics of operating system scheduling, memory contention, and hardware cache coherence.',
-        'In the Parallel Programming Patterns and Network Programming courses at Izmir Institute of Technology, we dove directly into C/C++ POSIX threads, semaphore synchronization, and pipeline architectures.',
-        'Understanding how lock contention degrades throughput under high core counts fundamentally changes how you design backend services—even when writing async code in Python or Node.js.',
+        'During my internship at Yenilik Atölyesi / Tech’n Roll, we engineered an end-to-end question answering pipeline that evaluated diverse Large Language Models against document corpora.',
+        'Deploying these pipelines with FastAPI and Elasticsearch enabled real-time response generation with strict endpoint reliability and Dockerized portability.',
       ],
     },
   ] as TechnicalArticle[],

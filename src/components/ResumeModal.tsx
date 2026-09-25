@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Printer, Copy, Check, Download, ExternalLink, Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { X, Printer, Copy, Check, Download, Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 import { cvData } from '../data/cvData';
 
 interface ResumeModalProps {
@@ -19,45 +19,50 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   const copyCvText = () => {
     const text = `
 FURKAN YAVUZ
-Software Engineer
-Phone: ${cvData.personal.phone}
-Location: ${cvData.personal.location}
-Email: ${cvData.personal.email}
-GitHub: ${cvData.personal.github}
-LinkedIn: ${cvData.personal.linkedin}
+SOFTWARE ENGINEER
++90 545 864 76 45 • İzmir, Türkiye
+furkanyavuz0926@gmail.com
+linkedin.com/in/furkan-yavuz- • github.com/FurkanYavuz09
 
 SUMMARY
 ${cvData.personal.summary}
 
-SKILLS
-Languages: Python(Tensorflow, sci-kit learn, Flask), Java, C, C++, HTML/CSS/Javascript, SQL
-Technologies: Linux(Ubuntu/Mint), Git, MongoDB, MySQL, JSON, Node.js
+EXPERIENCE
+ETE Technology — C++ Software Engineer
+02/2024 – Present (Since Feb 19, 2024)
+• Actively contributing to the core architecture and development of the nginr product using modern C++.
+• Designing and optimizing high-performance, low-latency networking modules and communication protocols.
+• Building robust, fault-tolerant microservices and backend services operating in distributed system environments.
+• Developing big data ingestion and processing pipelines focused on high concurrency, throughput, and memory efficiency.
+Technologies: C++, Distributed Systems, Networking, Microservices, Big Data, Linux/Ubuntu, Git
+
+Yenilik Atölyesi / Tech'n Roll — Software Engineer Intern
+01/2023 – 02/2023
+• Implemented an NLP pipeline using the Haystack framework and evaluated performance across various Large Language Models (LLMs).
+• Architected and deployed a RESTful API using FastAPI to serve model inferences reliably.
+Technologies: Python (FastAPI, Haystack), Hugging Face, Elasticsearch, Docker, Postman
 
 PROJECTS
-Thesis Project: Machine Learning-based Analysis of Scientific and Research Connections
-• Developed a keyword based classification algorithm for classifying articles by Sustainable Development Goals using TF-IDF.
-• Developed a user based Article Recommendation system by finding a similarity score between Articles.
-• Processed extensive JSON data containing articles, extracted articles authored by Turkish writers via python scripts.
-Used Technologies: JSON, MongoDB, GitLab, Google Colab
-Programming Languages: Python(numpy, pandas, TensorFlow, sci-kit learn, nltk)
+Thesis: ML-based Analysis of Scientific & Research Connections (İzmir Institute of Technology)
+• Engineered a TF-IDF keyword classification algorithm to classify academic articles under UN Sustainable Development Goals.
+• Constructed a collaborative-filtering article recommendation engine for research discovery.
+• Parsed and filtered large-scale JSON publication datasets, extracting academic contributions by Turkish authors.
+Technologies: Python (NumPy, Pandas, TensorFlow, Keras, scikit-learn, NLTK), MongoDB, GitLab
 
-EDUCATION
-English Language Preparatory Program (2018 - 2019)
-İzmir Institute Of Technology (2019 - 2023)
-Bachelor of Science - BS, Computer Engineering
-Taken Elective Courses: Network Design And Management, Network Programming, Artificial Intelligence, Introduction To Machine Learning, Building Software Systems, Parallel Programming Patterns
-OSF Academy Salesforce Core Developer (10/2023 - 11/2023)
+Weather Forecasting Using Data Mining (Personal / Academic Project)
+• Built an automated Python web scraper to aggregate historical meteorological data.
+• Trained ML regression and time-series models for 3-day, 7-day, and 14-day weather forecasting.
+Technologies: Python (NumPy, Pandas, scikit-learn, Selenium), GitHub, Google Colab
 
-EXPERIENCE
-Infuseloop - Software Engineer Intern (01/2023 - 02/2023)
-• Worked on a question answering system using language models in a start-up company.
-• Responsible for creating a pipeline for data collecting and processing.
-• Used an Open-source LLM framework 'Haystack' for building an NLP pipeline.
-Used Technologies: Hugging Face, Elastic Search, Postman, Docker
-Programming Languages: Python(FastAPI, haystack)
+EDUCATION & TRAINING
+İzmir Institute of Technology — B.S. in Computer Engineering (2018 – 2023)
+OSF Academy — Salesforce Core Developer (6-Week Intensive Program) (10/2023 – 11/2023)
 
-LANGUAGES
-English - Advanced, Turkish - Native, Mandarin Chinese - Beginner
+TECHNICAL SKILLS & LANGUAGES
+Programming Languages: C++, C, Python, Java, Go, SQL, JavaScript, HTML
+Core Domains & Concepts: Distributed Systems, Computer Networking, Microservices, Big Data, Concurrency, OOP
+Tools & Technologies: Linux/Ubuntu, Docker, Git, MongoDB, MySQL, Elasticsearch, Postman, Google Cloud, Node.js
+Languages: English (Advanced / Professional Working), Turkish (Native)
     `.trim();
 
     navigator.clipboard.writeText(text);
@@ -77,7 +82,7 @@ English - Advanced, Turkish - Native, Mandarin Chinese - Beginner
         <div className="px-6 py-3.5 border-b border-neutral-800 bg-[#141722] flex items-center justify-between text-neutral-300">
           <div className="flex items-center gap-2 font-mono text-xs text-white">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>FURKAN_YAVUZ_CV.pdf</span>
+            <span>FURKAN_YAVUZ_CV.pdf (Updated: ETE Technology)</span>
           </div>
 
           <div className="flex items-center gap-2">
@@ -117,57 +122,63 @@ English - Advanced, Turkish - Native, Mandarin Chinese - Beginner
               <h1 className="text-3xl font-extrabold text-neutral-950 uppercase tracking-tight">
                 FURKAN YAVUZ
               </h1>
-              <p className="text-base font-semibold text-neutral-700 mt-0.5">
-                Software Engineer
+              <p className="text-base font-bold text-neutral-800 tracking-wide mt-0.5">
+                SOFTWARE ENGINEER
               </p>
             </div>
 
-            <div className="text-xs font-mono text-neutral-800 space-y-1">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-neutral-700" />
-                <span>+905458647645</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-neutral-700" />
-                <span>İzmir, Türkiye</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-neutral-700" />
-                <span>furkanyavuz0926@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Github className="w-3.5 h-3.5 text-neutral-700" />
-                <span>github.com/FurkanYavuz09</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Linkedin className="w-3.5 h-3.5 text-neutral-700" />
-                <span>linkedin.com/in/furkan-yavuz</span>
-              </div>
+            <div className="text-xs font-mono text-neutral-800 space-y-1 sm:text-right">
+              <div>+90 545 864 76 45 • İzmir, Türkiye</div>
+              <div>furkanyavuz0926@gmail.com</div>
+              <div>linkedin.com/in/furkan-yavuz- • github.com/FurkanYavuz09</div>
             </div>
           </div>
 
-          {/* SUMMARY & SKILLS Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div className="md:col-span-7 space-y-2">
-              <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
-                SUMMARY
-              </h2>
-              <p className="text-xs text-neutral-800 leading-relaxed">
-                I am a New Graduate Software Engineer who is interested in Natural Language Processing, Backend Development and Machine Learning. I am seeking to utilize a broad educational background with excellent analytical, technical and programming skills to thrive as an entry level Software Engineer.
-              </p>
+          {/* SUMMARY */}
+          <div className="space-y-1.5">
+            <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+              SUMMARY
+            </h2>
+            <p className="text-xs text-neutral-800 leading-relaxed">
+              {cvData.personal.summary}
+            </p>
+          </div>
+
+          {/* EXPERIENCE */}
+          <div className="space-y-4">
+            <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+              EXPERIENCE
+            </h2>
+
+            {/* ETE Technology */}
+            <div className="space-y-1.5 text-xs text-neutral-800">
+              <div className="flex justify-between font-bold text-neutral-950">
+                <span>ETE Technology — C++ Software Engineer</span>
+                <span className="font-mono">02/2024 – Present</span>
+              </div>
+              <ul className="list-disc list-inside space-y-1 pl-1">
+                <li>Actively contributing to the core architecture and development of the nginr product using modern C++.</li>
+                <li>Designing and optimizing high-performance, low-latency networking modules and communication protocols.</li>
+                <li>Building robust, fault-tolerant microservices and backend services operating in distributed system environments.</li>
+                <li>Developing big data ingestion and processing pipelines focused on high concurrency, throughput, and memory efficiency.</li>
+              </ul>
+              <div className="text-xs text-neutral-700 pt-1 font-mono">
+                <strong>Technologies:</strong> C++, Distributed Systems, Networking, Microservices, Big Data, Linux/Ubuntu, Git
+              </div>
             </div>
 
-            <div className="md:col-span-5 space-y-2">
-              <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
-                SKILLS
-              </h2>
-              <div className="text-xs space-y-1.5 text-neutral-800">
-                <div>
-                  <strong className="font-semibold">Languages:</strong> Python(Tensorflow, sci-kit learn, Flask), Java, C, C++, HTML/CSS/Javascript, SQL
-                </div>
-                <div>
-                  <strong className="font-semibold">Technologies:</strong> Linux(Ubuntu/Mint), Git, MongoDB, MySQL, JSON, Node.js.
-                </div>
+            {/* Yenilik Atölyesi / Tech'n Roll */}
+            <div className="space-y-1.5 text-xs text-neutral-800">
+              <div className="flex justify-between font-bold text-neutral-950">
+                <span>Yenilik Atölyesi / Tech&apos;n Roll — Software Engineer Intern</span>
+                <span className="font-mono">01/2023 – 02/2023</span>
+              </div>
+              <ul className="list-disc list-inside space-y-1 pl-1">
+                <li>Implemented an NLP pipeline using the Haystack framework and evaluated performance across various Large Language Models (LLMs).</li>
+                <li>Architected and deployed a RESTful API using FastAPI to serve model inferences reliably.</li>
+              </ul>
+              <div className="text-xs text-neutral-700 pt-1 font-mono">
+                <strong>Technologies:</strong> Python (FastAPI, Haystack), Hugging Face, Elasticsearch, Docker, Postman
               </div>
             </div>
           </div>
@@ -177,84 +188,74 @@ English - Advanced, Turkish - Native, Mandarin Chinese - Beginner
             <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
               PROJECTS
             </h2>
-            <div className="space-y-1.5">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs">
-                <span className="font-bold text-neutral-950">Thesis Project: Machine Learning-based Analysis of Scientific and Research Connections</span>
-              </div>
-              <ul className="list-disc list-inside text-xs text-neutral-800 space-y-1 pl-1">
-                <li>Developed a keyword based classification algorithm for classifying articles by Sustainable Development Goals using TF-IDF.</li>
-                <li>Developed a user based Article Recommendation system by finding a similarity score between Articles.</li>
-                <li>Processed extensive JSON data containing articles, extracted articles authored by Turkish writers via python scripts.</li>
-              </ul>
-              <div className="text-xs text-neutral-700 pt-1 space-y-0.5 font-mono">
-                <div><strong>Used Technologies:</strong> JSON, MongoDB, GitLab, Google Colab</div>
-                <div><strong>Programming Languages:</strong> Python(numpy, pandas, TensorFlow, sci-kit learn, nltk)</div>
-              </div>
-            </div>
-          </div>
 
-          {/* EDUCATION */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
-              EDUCATION
-            </h2>
-            <div className="space-y-2.5 text-xs text-neutral-800">
-              <div className="flex justify-between font-semibold text-neutral-950">
-                <span>English Language Preparatory Program</span>
-                <span className="font-mono">2018 - 2019</span>
-              </div>
-
-              <div>
-                <div className="flex justify-between font-bold text-neutral-950">
-                  <span>İzmir Institute Of Technology</span>
-                  <span className="font-mono">2019 - 2023</span>
-                </div>
-                <div className="italic text-neutral-700">Bachelor of Science - BS, Computer Engineering</div>
-                <div className="mt-1">
-                  <strong>Taken Elective Courses:</strong> Network Design And Management, Network Programming, Artificial Intelligence, Introduction To Machine Learning, Building Software Systems, Parallel Programming Patterns
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between font-semibold text-neutral-950">
-                  <span>OSF Academy Salesforce Core Developer</span>
-                  <span className="font-mono">10/2023 - 11/2023</span>
-                </div>
-                <div className="text-neutral-700">6 Week Salesforce training program</div>
-              </div>
-            </div>
-          </div>
-
-          {/* EXPERIENCE */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
-              EXPERIENCE
-            </h2>
             <div className="space-y-1.5 text-xs text-neutral-800">
               <div className="flex justify-between font-bold text-neutral-950">
-                <span>Infuseloop — Software Engineer Intern</span>
-                <span className="font-mono">01/2023 – 02/2023</span>
+                <span>Thesis: ML-based Analysis of Scientific & Research Connections</span>
+                <span className="font-mono font-normal">İzmir Institute of Technology</span>
               </div>
               <ul className="list-disc list-inside space-y-1 pl-1">
-                <li>I worked on a question answering system using language models in a start-up company. This company focus on accelerating knowledge discovery from documents with AI.</li>
-                <li>I was responsible for creating a pipeline for data collecting and processing, creating a reliable model with accurate results.</li>
-                <li>I Used a Open-source LLM framework &apos;Haystack&apos; for building a NLP pipeline.</li>
+                <li>Engineered a TF-IDF keyword classification algorithm to classify academic articles under UN Sustainable Development Goals.</li>
+                <li>Constructed a collaborative-filtering article recommendation engine for research discovery.</li>
+                <li>Parsed and filtered large-scale JSON publication datasets, extracting academic contributions by Turkish authors.</li>
               </ul>
-              <div className="text-xs text-neutral-700 pt-1 space-y-0.5 font-mono">
-                <div><strong>Used Technologies:</strong> Hugging Face, Elastic Search, Postman, Docker.</div>
-                <div><strong>Programming Languages:</strong> Python(FastAPI, haystack)</div>
+              <div className="text-xs text-neutral-700 pt-0.5 font-mono">
+                <strong>Technologies:</strong> Python (NumPy, Pandas, TensorFlow, Keras, scikit-learn, NLTK), MongoDB, GitLab
+              </div>
+            </div>
+
+            <div className="space-y-1.5 text-xs text-neutral-800 pt-2">
+              <div className="flex justify-between font-bold text-neutral-950">
+                <span>Weather Forecasting Using Data Mining</span>
+                <span className="font-mono font-normal">Personal / Academic Project</span>
+              </div>
+              <ul className="list-disc list-inside space-y-1 pl-1">
+                <li>Built an automated Python web scraper to aggregate historical meteorological data.</li>
+                <li>Trained ML regression and time-series models for 3-day, 7-day, and 14-day weather forecasting.</li>
+              </ul>
+              <div className="text-xs text-neutral-700 pt-0.5 font-mono">
+                <strong>Technologies:</strong> Python (NumPy, Pandas, scikit-learn, Selenium), GitHub, Google Colab
               </div>
             </div>
           </div>
 
-          {/* LANGUAGES */}
+          {/* EDUCATION & TRAINING */}
+          <div className="space-y-3">
+            <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+              EDUCATION & TRAINING
+            </h2>
+            <div className="space-y-2 text-xs text-neutral-800">
+              <div className="flex justify-between font-bold text-neutral-950">
+                <span>İzmir Institute of Technology — B.S. in Computer Engineering</span>
+                <span className="font-mono">2018 – 2023</span>
+              </div>
+
+              <div className="flex justify-between font-semibold text-neutral-950">
+                <span>OSF Academy — Salesforce Core Developer (6-Week Intensive Program)</span>
+                <span className="font-mono">10/2023 – 11/2023</span>
+              </div>
+            </div>
+          </div>
+
+          {/* TECHNICAL SKILLS & LANGUAGES */}
           <div className="space-y-2">
             <h2 className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
-              LANGUAGES
+              TECHNICAL SKILLS & LANGUAGES
             </h2>
-            <p className="text-xs text-neutral-800 font-mono">
-              English - Advanced, Turkish - Native, Mandarin Chinese - Beginner
-            </p>
+            <div className="text-xs text-neutral-800 space-y-1">
+              <div>
+                <strong>Programming Languages:</strong> C++, C, Python, Java, Go, SQL, JavaScript, HTML
+              </div>
+              <div>
+                <strong>Core Domains & Concepts:</strong> Distributed Systems, Computer Networking, Microservices, Big Data, Concurrency, OOP
+              </div>
+              <div>
+                <strong>Tools & Technologies:</strong> Linux/Ubuntu, Docker, Git, MongoDB, MySQL, Elasticsearch, Postman, Google Cloud, Node.js
+              </div>
+              <div>
+                <strong>Languages:</strong> English (Advanced / Professional Working), Turkish (Native)
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
             Get In Touch
           </h2>
           <p className="text-sm text-neutral-400 font-sans max-w-2xl">
-            Currently open to entry-level and junior Software Engineering, NLP, and Machine Learning positions. Feel free to reach out directly via email, phone, or the contact form below.
+            Currently working at ETE Technology as C++ Software Engineer. Feel free to reach out directly for technical discussions, engineering inquiries, or collaborations via email, phone, or the contact form below.
           </p>
         </div>
 

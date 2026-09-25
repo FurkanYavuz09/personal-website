@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Terminal, Database, Server, Languages, Cpu, CheckCircle } from 'lucide-react';
+import { Code2, Server, Cpu, Layers, Languages, Check } from 'lucide-react';
 import { cvData } from '../data/cvData';
 
 export const SkillsSection: React.FC = () => {
@@ -10,41 +10,49 @@ export const SkillsSection: React.FC = () => {
         <div className="space-y-2 mb-12">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span>Technical Capabilities</span>
+            <span>Technical Skills & Languages</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white font-sans">
-            Skills & Technologies
+            Technical Stack
           </h2>
           <p className="text-sm text-neutral-400 font-sans max-w-2xl">
-            Proficiencies across programming languages, machine learning frameworks, data persistence layers, and systems engineering.
+            Specialized in low-level high-performance C++, distributed systems architecture, microservices, and big data concurrency.
           </p>
         </div>
 
-        {/* 2-Column Grid: Core Languages vs Technologies */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Programming Languages (From CV) */}
-          <div className="lg:col-span-6 bg-[#0e1017] border border-neutral-800 p-6 md:p-8 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
+        {/* 3-Column / 2-Row Layout Matching CV Categories */}
+        <div className="space-y-8">
+          {/* Programming Languages */}
+          <div className="bg-[#0e1017] border border-neutral-800 p-6 md:p-8 space-y-5">
+            <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
               <div className="flex items-center gap-2.5">
                 <Code2 className="w-5 h-5 text-emerald-400" />
                 <h3 className="text-lg font-bold text-white font-sans">Programming Languages</h3>
               </div>
-              <span className="text-[11px] font-mono text-neutral-500 uppercase">CV DIRECT</span>
+              <span className="text-xs font-mono text-neutral-500">C++, C, Python, Java, Go, SQL, JS, HTML</span>
             </div>
 
-            <div className="space-y-4">
-              {cvData.skills.languages.map((lang, idx) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+              {cvData.skills.programmingLanguages.map((lang, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 transition-colors"
+                  className={`p-3.5 border transition-colors ${
+                    lang.name === 'C++' || lang.name === 'C'
+                      ? 'bg-emerald-950/20 border-emerald-800/80'
+                      : 'bg-neutral-900/60 border-neutral-800'
+                  }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-sm font-bold text-white">
                       {lang.name}
                     </span>
-                    <span className="text-[11px] font-mono text-emerald-400">Core</span>
+                    {lang.name === 'C++' && (
+                      <span className="text-[10px] font-mono px-1.5 py-0.5 bg-emerald-500 text-black font-semibold">
+                        Primary
+                      </span>
+                    )}
                   </div>
-                  <p className="text-xs text-neutral-400 font-mono mt-1">
+                  <p className="text-[11px] text-neutral-400 font-mono mt-1 leading-normal">
                     {lang.details}
                   </p>
                 </div>
@@ -52,64 +60,69 @@ export const SkillsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Technologies & Frameworks (From CV) */}
-          <div className="lg:col-span-6 bg-[#0e1017] border border-neutral-800 p-6 md:p-8 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
-              <div className="flex items-center gap-2.5">
-                <Server className="w-5 h-5 text-emerald-400" />
-                <h3 className="text-lg font-bold text-white font-sans">Technologies & Tools</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Core Domains & Concepts */}
+            <div className="lg:col-span-6 bg-[#0e1017] border border-neutral-800 p-6 md:p-8 space-y-4">
+              <div className="flex items-center gap-2.5 pb-3 border-b border-neutral-800">
+                <Cpu className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-lg font-bold text-white font-sans">Core Domains & Concepts</h3>
               </div>
-              <span className="text-[11px] font-mono text-neutral-500 uppercase">STACK</span>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                {cvData.skills.coreDomains.map((domain, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 bg-neutral-900/60 border border-neutral-800 flex items-center gap-2 text-xs font-mono text-neutral-200"
+                  >
+                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>{domain}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="space-y-4">
-              {cvData.skills.technologies.map((group, idx) => (
-                <div key={idx} className="space-y-2">
-                  <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
-                    {group.category}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="px-3 py-1.5 bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-200"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            {/* Tools & Technologies */}
+            <div className="lg:col-span-6 bg-[#0e1017] border border-neutral-800 p-6 md:p-8 space-y-4">
+              <div className="flex items-center gap-2.5 pb-3 border-b border-neutral-800">
+                <Server className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-lg font-bold text-white font-sans">Tools & Technologies</h3>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-2">
+                {cvData.skills.toolsAndTechnologies.map((tool, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1.5 bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-200"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Spoken Languages & Linguistic Proficiencies (From CV) */}
-        <div className="mt-8 bg-[#0e1017] border border-neutral-800 p-6 md:p-8">
-          <div className="flex items-center gap-2.5 pb-4 border-b border-neutral-800 mb-6">
-            <Languages className="w-5 h-5 text-emerald-400" />
-            <h3 className="text-lg font-bold text-white font-sans">Spoken & Written Languages</h3>
-          </div>
+          {/* Languages */}
+          <div className="bg-[#0e1017] border border-neutral-800 p-6 md:p-8">
+            <div className="flex items-center gap-2.5 pb-3 border-b border-neutral-800 mb-5">
+              <Languages className="w-5 h-5 text-emerald-400" />
+              <h3 className="text-lg font-bold text-white font-sans">Languages</h3>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {cvData.skills.spokenLanguages.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-4 bg-neutral-900/60 border border-neutral-800 space-y-1"
-              >
-                <div className="flex items-center justify-between">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {cvData.skills.spokenLanguages.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="p-4 bg-neutral-900/60 border border-neutral-800 flex items-center justify-between"
+                >
                   <span className="font-sans font-bold text-white text-base">
                     {item.language}
                   </span>
-                  <span className="text-xs font-mono text-emerald-400 font-semibold">
+                  <span className="text-xs font-mono text-emerald-400 font-semibold px-2 py-0.5 bg-emerald-950/60 border border-emerald-900">
                     {item.proficiency}
                   </span>
                 </div>
-                <div className="text-xs font-mono text-neutral-500">
-                  {item.level}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
